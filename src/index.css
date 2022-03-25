@@ -1,13 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Overpass", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  background: url("./images/bg-pattern-intro-desktop.svg") no-repeat,
+    linear-gradient(hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  background-size: 1050px;
+  background-position: center;
+}
+
+.art {
+  background: url("./images/bg-pattern-circles.svg") no-repeat,
+    hsl(237, 17%, 21%);
+  background-size: 750px;
+  background-position: center -300px;
+  border-radius: 0 90px 0 90px;
+}
+
+@media (min-width: 640px) {
+  .art {
+    background-position: left -300px;
+  }
+}
+@media (min-width: 1280px) {
+  .art {
+    background-position: 500px -200px;
+  }
+}
+
+.test {
+  @apply fixed left-1 right-1 top-20 mx-10 h-auto flex flex-col py-10 rounded-lg;
 }
