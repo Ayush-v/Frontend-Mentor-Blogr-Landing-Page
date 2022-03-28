@@ -37,3 +37,17 @@ body {
 .test {
   @apply fixed left-1 right-1 top-20 mx-10 h-auto flex flex-col py-10 rounded-lg;
 }
+
+.responsive-navbar {
+  @apply md:mr-auto md:relative md:bg-transparent md:text-white md:p-0 md:pb-0 md:top-0 md:right-0 fixed top-20 right-16 bg-white text-zinc-700 p-16 pb-32 rounded-xl;
+}
+.responsive-navbar-hide {
+  @apply md:mr-auto md:relative md:bg-transparent md:text-white md:p-0 md:pb-0 md:top-0 md:right-0 fixed top-20 right-16 bg-white text-zinc-700 p-16 pb-32 rounded-xl hidden;
+}
+.responsive-login {
+  @apply flex gap-6 md:relative md:top-0 md:right-0 md:flex-row fixed z-10 top-72 right-32 flex-col;
+}
+
+.drop-down {
+  @apply absolute top-7 bg-white text-black p-3 rounded-lg flex flex-col gap-2 invisible;
+}

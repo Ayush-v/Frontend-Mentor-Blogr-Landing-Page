@@ -11,29 +11,29 @@ const Footer = () => {
         <div className="flex flex-col gap-10 sm:flex-row sm:justify-evenly w-full">
           <div className="flex flex-col gap-1">
             <h6 className="mb-6 text-xl font-medium">Product</h6>
-            <div className="text-lg text-stone-400">
-              <p>Overview</p>
-              <p>Pricing</p>
-              <p>Marketplace</p>
-              <p>Features</p>
-              <p>Integrations</p>
+            <div className="text-lg text-stone-400  cursor-pointer">
+              <p className="hover:underline">Overview</p>
+              <p className="hover:underline">Pricing</p>
+              <p className="hover:underline">Marketplace</p>
+              <p className="hover:underline">Features</p>
+              <p className="hover:underline">Integrations</p>
             </div>
           </div>
           <div className="flex flex-col gap-1">
             <h6 className="mb-6 text-xl font-medium">Company</h6>
-            <div className="text-lg text-stone-400">
-              <p>About</p>
-              <p>Team</p>
-              <p>Blog</p>
-              <p>Careers</p>
+            <div className="text-lg text-stone-400 cursor-pointer">
+              <p className="hover:underline">About</p>
+              <p className="hover:underline">Team</p>
+              <p className="hover:underline">Blog</p>
+              <p className="hover:underline">Careers</p>
             </div>
           </div>
           <div className="flex flex-col gap-1">
             <h6 className="mb-6 text-xl font-medium">Connect</h6>
-            <div className="text-lg text-stone-400">
-              <p>Contact</p>
-              <p>Newsletter</p>
-              <p>LinkedIn</p>
+            <div className="text-lg text-stone-400 cursor-pointer">
+              <p className="hover:underline">Contact</p>
+              <p className="hover:underline">Newsletter</p>
+              <p className="hover:underline">LinkedIn</p>
             </div>
           </div>
         </div>

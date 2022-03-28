@@ -3,47 +3,86 @@ import React, { useState } from "react";
 import logo from "../images/logo.svg";
 import menu from "../images/icon-hamburger.svg";
 import close from "../images/icon-close.svg";
-import iconarrow from "../images/icon-arrow-dark.svg";
+import iconarrow from "../images/icon-arrow-light.svg";
+import iconarrowDark from "../images/icon-arrow-dark.svg";
 
 const NavBar = () => {
   const [openNav, setOpenNav] = useState(false);
 
   return (
     <>
-      <header className="flex flex-row justify-between p-8 mx-auto max-w-screen-xl items-center">
-        <div className="flex justify-between w-full">
-          <div className="flex gap-12 items-center">
-            <img src={logo} alt="logo" className="w-auto h-8 self-center" />
-
-            <nav
-              className={
-                openNav ? "bg-white text-black test" : "hidden md:block"
-              }
+      <header className="flex justify-between p-8 mx-auto max-w-screen-xl">
+        <div className="flex justify-between w-full items-center gap-6">
+          <img src={logo} alt="logo" />
+          <nav className={openNav ? "hidden md:block" : "responsive-navbar"}>
+            <ul
+              id="primary-navigation"
+              className={"flex gap-6 flex-col md:flex-row items-center"}
             >
-              <ul className="flex gap-5 flex-col justify-center items-center">
-                <li className="flex gap-2 items-center">
-                  <span>Product</span>
-                  <img src={iconarrow} alt="arrow" className="self-center" />
-                </li>
-                <li className="flex gap-2 items-center">
-                  <span>Company</span>
-                  <img src={iconarrow} alt="arrow" className="self-center" />
-                </li>
-                <li className="flex gap-2 items-center">
-                  <span>Connect</span>
-                  <img src={iconarrow} alt="arrow" className="self-center" />
-                </li>
-              </ul>
-
-              <div className="h-[1px] bg-gray-300 md:hidden mx-6 my-4"></div>
-
-              <div className="md:block flex flex-col mt-3 gap-3">
-                <button className="font-semibold">Login</button>
-                <button className="bg-red-400 py-2 px-6 font-medium text-white rounded-full mx-auto">
-                  Sign Up
-                </button>
-              </div>
-            </nav>
+              <li className="flex gap-2 items-center relative group cursor-pointer hover:underline">
+                <span>Product</span>
+                <img
+                  src={iconarrow}
+                  alt="icon"
+                  className="self-center hidden md:block"
+                />
+                <img
+                  src={iconarrowDark}
+                  alt="icon"
+                  className="self-center md:hidden"
+                />
+                <ul className="drop-down group-hover:visible group-focus:visible">
+                  <li>Overview</li>
+                  <li>Pricing</li>
+                  <li>Marketplace</li>
+                  <li>Features</li>
+                  <li>Integrations</li>
+                </ul>
+              </li>
+              <li className="flex gap-2 items-center relative cursor-pointer hover:underline group">
+                <span>Company</span>
+                <img
+                  src={iconarrow}
+                  alt="arrow"
+                  className="self-center md:block hidden"
+                />
+                <img
+                  src={iconarrowDark}
+                  alt="arrow"
+                  className="self-center md:hidden"
+                />
+                <ul className="drop-down group-hover:visible group-focus:visible">
+                  <li>About</li>
+                  <li>Team</li>
+                  <li>Blog</li>
+                  <li>Careers</li>
+                </ul>
+              </li>
+              <li className="flex gap-2 items-center relative cursor-pointer hover:underline group">
+                <span>Connect</span>
+                <img
+                  src={iconarrow}
+                  alt="arrow"
+                  className="self-center md:block hidden"
+                />
+                <img
+                  src={iconarrowDark}
+                  alt="arrow"
+                  className="self-center md:hidden"
+                />
+                <ul className="drop-down group-hover:visible group-focus:visible">
+                  <li>Contact</li>
+                  <li>Newsletter</li>
+                  <li>LinkedIn</li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div className={openNav ? "hidden md:block" : "responsive-login"}>
+            <button className="text-red-400 md:text-white">Login</button>
+            <button className="bg-red-400 py-2 px-6 rounded-full md:bg-white md:text-red-400">
+              Sign up
+            </button>
           </div>
         </div>
         <button
@@ -52,7 +91,7 @@ const NavBar = () => {
             setOpenNav(!openNav);
           }}
         >
-          <img src={openNav ? close : menu} alt="menu" />
+          <img src={openNav ? menu : close} alt="menu" />
         </button>
       </header>
     </>
